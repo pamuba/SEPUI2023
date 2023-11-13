@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="angular-route.js"></script>
+    <script src="routing.js"></script>
+</head>
+<body ng-app="app">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 well">
+                 <h1>Routing Demo</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3" style="height:100%">
+                <ul>
+                    <li><a href="#!/first-msg">First</a></li> 
+                    <li><a href="#!/second-msg">Second</a></li>
+                    <li><a href="#!/third-msg">Third</a></li>
+                    <li><a href="#!/sumurl/10/20">Sum Url</a></li>
+                    <li><a href="#!/suminput">Sum Input</a></li>
+                </ul>
+            </div>
+            <div class="well col-sm-9" style="height:60vh">
+                <div  ng-view>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -8,17 +8,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
-    <script src="watcherdemos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="qDemo.js"></script>
 </head>
 <body ng-app="app">
-    <h1>Watcher Demo</h1>
+    <h1>$q Service Demo</h1>
     <hr>
-    <div ng-controller="emp" class="container">
-       <div ng-repeat="e in emps">
-        <div>{{e.empno}} - {{e.ename}}</div>
-       </div>
-       <button ng-click="addEmp()">add</button>
-       <button ng-click="modify3rdEmp()">modify 3rd Emp</button>
+    <div id="div1" ng-controller="emp" class="container">
+      <h2>RESULT : {{result}}</h2>
+      Time: {{elapsedTime}}
     </div>
 </body>
 </html>

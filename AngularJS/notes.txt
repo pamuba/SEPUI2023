@@ -1,0 +1,7 @@
+digest cycle
+$apply
+$digest
+$routing
+custom directives
+
+JWT tokens(Angular 13)
