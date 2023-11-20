@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "4.11"
+    "body-parser": "^1.10.1",
+    "express": "4.11",
+    "mongojs": "^3.1.0"
   }
 }
