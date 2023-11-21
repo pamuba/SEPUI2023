@@ -32,11 +32,14 @@
                     <td><input type="text" class="form-control" ng-model="contact.email"></td>
                     <td><input type="text" class="form-control" ng-model="contact.number"></td>
                     <td><button class="btn btn-primary" ng-click="addContacts()">Add Contact</button></td>
+                    <td><button class="btn btn-info" ng-click="update()">Update</button></td>
                 </tr>
                 <tr ng-repeat='contact in contactlist'>
                     <td>{{contact.name}}</td>
                     <td>{{contact.email}}</td>
                     <td>{{contact.number}}</td>
+                    <td><button class="btn btn-danger" ng-click="remove(contact._id)">Delete</button>
+                    <td><button class="btn btn-warning" ng-click="edit(contact._id)">Edit</button>
                 </tr>
             </tbody>
         </table>
