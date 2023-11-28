@@ -20,18 +20,6 @@ app.get("/posts", authenticateToken, (req, res) => {
     res.json(posts.filter(post => post.username === req.user.name))
 })
 
-app.post("/login", (req, res) => {
-    //Login Code here
-  
-    const username = req.body.username
-    const user = {name: username}
-
-    const accessToken = jwt.sign(user,
-         process.env.ACCESS_TOKEN_SECRET)
-
-    res.json({accessToken:accessToken})
-
-})
 
 //Bearer  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSm9obiIsImlhdCI6MTcwMDYwNTU1Mn0.mQeKFxrnwZNpZPeMZ4FEb-B7b5-lydPhcmebfeSTcDU"
 function authenticateToken(req, res, next){
