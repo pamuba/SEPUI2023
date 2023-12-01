@@ -1,0 +1,29 @@
+1. gulp(install globally and locally)
+2. gulp-jshint(lint)
+
+
+minify + rename css files
+gulp-rename
+gulp-clean-css
+
+sass compile + minify + rename
+gulp-sass
+sass
+
+sass compile + minify + rename + autoprefixer + sourcemaps
+gulp-autoprefixer
+gulp-sourcemaps
+
+
+image minification
+gulp-imagemin
+
+
+transpile(babelify) + minify + rename + autoprefixer + sourcemaps
+babel-core@6.26.3
+babel-preset-env@1.7.0
+babelify@8.0.0
+browserify@17.0.0
+vinyl-buffer@1.0.1
+vinyl-source-stream@2.0.0
+gulp-uglify@3.0.2

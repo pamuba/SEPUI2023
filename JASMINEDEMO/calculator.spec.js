@@ -33,7 +33,7 @@ describe('Testing calculator.js', function(){
     it('can be initialized', ()=>{
         jasmine.addMatchers(customMatcher);
 
-        expect(calculator).not.toBeCalculator();
+        expect(calculator).toBeCalculator();
 
         expect(calculator).toBeTruthy();
         expect(calculator2).toBeTruthy();
