@@ -8,6 +8,12 @@ const autoprefixer = require('gulp-autoprefixer')
 const sourcemaps = require('gulp-sourcemaps')
 const imagemin = require('gulp-imagemin')
 
+const browserify = require('browserify')
+const babelify = require('babelify')
+const source = require('vinyl-source-stream')
+const buffer = require('vinyl-buffer')
+const uglify = require('gulp-uglify')
+
 
 //gulp automation tasks
 // gulp.task('gulp_jshint_old', function(done){
@@ -109,13 +115,39 @@ const imgDEST = './dist/images'
 gulp.task('image', function(done){
     gulp.src(imgSRC)
         .pipe(imagemin(
-            //imagemin.mozjpeg({quality: 80, progressive: true})
+            imagemin.mozjpeg({quality: 80, progressive: true}),
             imagemin.gifsicle({interlaced: true}),
             imagemin.mozjpeg({quality: 75, progressive: true}),
             imagemin.optipng({optimizationLevel: 5})
         ))
         .pipe(gulp.dest(imgDEST));
 
+    done();
+})
+
+
+
+const jsSRC = 'script.js';
+const jsFolder = './src/js/';
+const jsDEST = './dist/js/';
+
+const jsFiles = [jsSRC]
+
+gulp.task('js', function(done){
+    jsFiles.map(function(entry){
+        return browserify({
+            entries:[jsFolder+entry]
+        })
+        .transform(babelify, {presets : ['env']})
+        .bundle()
+        .pipe(source(entry))
+        .pipe(rename({extname:'.min.js'}))
+        .pipe(buffer())
+        .pipe(sourcemaps.init({loadMaps:true}))
+        .pipe(uglify())
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest(jsDEST))
+    });
     done();
 })
 
