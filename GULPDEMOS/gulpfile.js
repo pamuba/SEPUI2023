@@ -103,5 +103,20 @@ gulp.task('styles', function(done){
 })
 
 //imagemin
+const imgSRC = './src/images/pic2.jpg'
+const imgDEST = './dist/images'
+
+gulp.task('image', function(done){
+    gulp.src(imgSRC)
+        .pipe(imagemin(
+            //imagemin.mozjpeg({quality: 80, progressive: true})
+            imagemin.gifsicle({interlaced: true}),
+            imagemin.mozjpeg({quality: 75, progressive: true}),
+            imagemin.optipng({optimizationLevel: 5})
+        ))
+        .pipe(gulp.dest(imgDEST));
+
+    done();
+})
 
 
