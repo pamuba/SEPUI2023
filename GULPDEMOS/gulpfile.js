@@ -2,6 +2,11 @@ const gulp = require('gulp')
 const jshint = require('gulp-jshint')
 const cleanCSS = require('gulp-clean-css')
 const rename = require('gulp-rename')
+//sass compiler is used by gulp-sass
+const sass = require('gulp-sass')(require('sass'))
+const autoprefixer = require('gulp-autoprefixer')
+const sourcemaps = require('gulp-sourcemaps')
+const imagemin = require('gulp-imagemin')
 
 
 //gulp automation tasks
@@ -35,26 +40,68 @@ function gulp_jshint1(done){
 
 
 //gulp minify + rename css file
-const styleSRC = './src/scss/style.css'
+// const styleSRC = './src/scss/style.css'
+// const styleDEST = './dist/css'
+
+// gulp.task('styles', function(done){
+//     gulp.src(styleSRC)
+//         .pipe(cleanCSS())
+//         .pipe(rename({suffix: '.min'}))
+//         .pipe(gulp.dest(styleDEST))
+
+//     done()
+// })
+
+
+// gulp.task('minify-css', () => {
+//     return gulp.src(styleSRC)
+//       .pipe(cleanCSS({debug: true}, (details) => {
+//         console.log(`${details.name}: ${details.stats.originalSize}`);
+//         console.log(`${details.name}: ${details.stats.minifiedSize}`);
+//       }))
+//     .pipe(rename({suffix:'.min'}))
+//     .pipe(gulp.dest(styleDEST));
+//   });
+
+//sass compile + minify + rename
+
+// const styleSRC = './src/scss/style.scss'
+// const styleDEST = './dist/css'
+
+// gulp.task('styles', function(done){
+//     gulp.src(styleSRC)
+//         .pipe(sass({
+//             outputStyle: 'compressed'
+//         }))
+//         .pipe(cleanCSS())
+//         .pipe(rename({suffix:'.min'}))
+//         .pipe(gulp.dest(styleDEST));
+
+//     done();
+// })
+
+//sass compile + minify + rename + sourcemaps + autoprefixing
+const styleSRC = './src/scss/style.scss'
 const styleDEST = './dist/css'
 
 gulp.task('styles', function(done){
     gulp.src(styleSRC)
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }))
+        .pipe(autoprefixer({
+            cascade:false
+        }))
         .pipe(cleanCSS())
-        .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest(styleDEST))
+        .pipe(rename({suffix:'.min'}))
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest(styleDEST));
 
     done()
+
 })
 
+//imagemin
 
-gulp.task('minify-css', () => {
-    return gulp.src(styleSRC)
-      .pipe(cleanCSS({debug: true}, (details) => {
-        console.log(`${details.name}: ${details.stats.originalSize}`);
-        console.log(`${details.name}: ${details.stats.minifiedSize}`);
-      }))
-    .pipe(rename({suffix:'.min'}))
-    .pipe(gulp.dest(styleDEST));
-  });
 
