@@ -18,3 +18,9 @@
   #tooltip .metric-date {
     text-decoration: underline;
   }
+
+  .axis{
+    font-size: 16px;
+    shape-rendering: geometricPrecision;
+    font-weight: bold;
+  }

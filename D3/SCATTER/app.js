@@ -32,17 +32,54 @@ async function draw(){
     
     const xScale = d3.scaleLinear()
                      .domain(d3.extent(dataset, xAccessor))
-                     .range([0, dimensions.ctrWidth])
+                     .rangeRound([0, dimensions.ctrWidth])
+    
+    const yScale = d3.scaleLinear()
+                    .domain(d3.extent(dataset, yAccessor))
+                    .rangeRound([dimensions.ctrHeight, 0])
+                    .nice()
+                    .clamp(true)
 
     //Draw Circles according to Enter Selection                  
     ctr.selectAll('circle')
         .data(dataset)
         .join('circle')
         .attr('cx', d => xScale(xAccessor(d)))
-        .attr('cy', yAccessor)
+        .attr('cy', d => yScale(yAccessor(d)))
         .attr('r', 5)
         .attr('fill', 'red')
+        .attr('temp', yAccessor)
 
+    //Axes
+    const xAxis = d3.axisBottom(xScale)
+                    .ticks(5)
+                    .tickFormat((d) => d * 100 + '%')
+                    //.tickValues([0, 0.4, 0.6, 0.8, 1.0])
+
+    const xAxisGroup = ctr.append('g')
+       .call(xAxis)
+       .style('transform',`translateY(${dimensions.ctrHeight}px)`)
+       .classed('axis', true)
+    
+    xAxisGroup.append('text')
+               .attr('x', dimensions.ctrWidth /2 )
+               .attr('y', dimensions.margin.bottom - 5)
+               .attr('fill', 'black')
+               .text('Humidity')
+
+    const yAxis = d3.axisLeft(yScale)
+
+    const yAxisGroup = ctr.append('g')
+       .call(yAxis)
+       .classed('axis', true)
+
+    yAxisGroup.append('text')
+              .attr('x', -dimensions.ctrHeight /2 )
+              .attr('y', -dimensions.margin.left + 15)
+              .attr('fill', 'black')
+              .html('Temperature &deg; F')
+              .style('transform', 'rotate(270deg)')
+              .style('text-anchor','middle')
 }
 
 draw();
@@ -53,3 +90,5 @@ draw();
 
 //Accessor functions
 //they help access a property in a data object
+//const svg = d3.create("svg")
+//.attr("viewBox", [0, 0, width, height]);
