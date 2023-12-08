@@ -1,0 +1,25 @@
+#chart{
+  width: 800px;
+  height: 800px;
+  background-color: #f7f7f7;
+  margin: 25px auto;
+  position: relative
+}
+
+#tooltip {
+  text-align: center;
+  border: 1px solid #ccc;
+  position: absolute;
+  padding: 10px;
+  background-color: #fff;
+  display: none;
+}
+
+#tooltip .metric-date {
+  text-decoration: underline;
+}
+
+.axis {
+  font-size: 18px;
+  shape-rendering: geometricPrecision;
+}
