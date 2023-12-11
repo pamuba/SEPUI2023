@@ -1,0 +1,4 @@
+<h2>Parent Component</h2>
+<input type="text"><button>Send Data To Child</button><br>
+Data From Child:{{message}}
+<child (childEvent)="message=$event" [parentData]="data"></child>

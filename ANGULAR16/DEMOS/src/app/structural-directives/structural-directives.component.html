@@ -1,0 +1,17 @@
+<!-- <h2 *ngIf="condition; then thenblock; else elseblock">Directives in Angular16</h2>
+
+<ng-template #elseblock>
+    <h2>Else block heading</h2>
+</ng-template>
+
+
+<ng-template #thenblock>
+    <h2>Then block heading</h2>
+</ng-template> -->
+
+<div [ngSwitch]="color">
+    <div [style.color]="color" *ngSwitchCase="'red'">RED COLOR</div>
+    <div [style.color]="color" *ngSwitchCase="'blue'">BLUE COLOR</div>
+    <div [style.color]="color" *ngSwitchCase="'gold'">GOLD COLOR</div>
+    <div *ngSwitchDefault>CHOOSE AGAIN</div>
+</div>
