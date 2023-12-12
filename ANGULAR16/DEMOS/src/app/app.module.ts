@@ -10,6 +10,9 @@ import { FormsModule } from '@angular/forms';
 import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { VwchildComponent } from './vwchild/vwchild.component';
+import { Comp1Component } from './comp1/comp1.component';
+import { Comp2Component } from './comp2/comp2.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { ChildComponent } from './child/child.component';
     TwdatadindingComponent,
     StructuralDirectivesComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    VwchildComponent,
+    Comp1Component,
+    Comp2Component
   ],
   imports: [
     FormsModule,

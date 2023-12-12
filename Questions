@@ -1,2 +1,12 @@
 Can you explain when we would use global vs local components?
 Streams to track changse in MongoDB
+LifeCycleHooks
+
+
+@Component({
+	styleUrls: [“./app1.component.css", “../app.component.css"]
+}) can we share css like this from app component?
+
+
+Do we need to learn any react framework for an interview or just 
+create-react-app is enough?
