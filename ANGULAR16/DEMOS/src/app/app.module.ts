@@ -13,6 +13,12 @@ import { ChildComponent } from './child/child.component';
 import { VwchildComponent } from './vwchild/vwchild.component';
 import { Comp1Component } from './comp1/comp1.component';
 import { Comp2Component } from './comp2/comp2.component';
+import { ProductsComponent } from './products/products.component';
+import { DemoComponent } from './demo/demo.component';
+import { SetBackgroundDirective } from './CustomDirectives/settingBacground.directive';
+import { HighlightDirective } from './highlight.directive';
+import { HoverDirective } from './hover.directive';
+import { BetterhighlightDirective } from './betterhighlight.directive';
 
 @NgModule({
   declarations: [
@@ -25,7 +31,13 @@ import { Comp2Component } from './comp2/comp2.component';
     ChildComponent,
     VwchildComponent,
     Comp1Component,
-    Comp2Component
+    Comp2Component,
+    ProductsComponent,
+    DemoComponent,
+    SetBackgroundDirective,
+    HighlightDirective,
+    HoverDirective,
+    BetterhighlightDirective
   ],
   imports: [
     FormsModule,

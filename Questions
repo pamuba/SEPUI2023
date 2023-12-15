@@ -10,3 +10,8 @@ LifeCycleHooks
 
 Do we need to learn any react framework for an interview or just 
 create-react-app is enough?
+
+I have been exploring Angular 17 and it does not work on a module based library but 
+instead with standalone components.
+
+Best Practises

@@ -17,7 +17,7 @@
   <app-vwchild></app-vwchild>
   {{vwcomp.sayHello()}} -->
 
-  <div style="margin:20px auto;width:780px">
+  <!-- <div style="margin:20px auto;width:780px">
     <div class="app-component">
       <h2>App Component</h2>
       <p>This is <b>app</b> component.</p>
@@ -27,7 +27,51 @@
       <app-comp1></app-comp1>
       <app-comp2></app-comp2>
     </div>
+  </div> -->
+
+  <!-- <div class="container" style="display: flex;">
+    <products>
+      <h4 class="title">New In iPhones</h4>
+      <input type="submit" class="btn btn-primary" title="Show More">
+    </products>
+    <products>
+      <h4 class="title">New In SamgSung</h4>
+      <input type="submit" class="btn btn-primary" title="Show More">
+    </products>
+    <products>
+      <h4 class="title">New In OnePlus</h4>
+      <input type="submit" class="btn btn-primary" title="Show More">
+    </products>
+    <products>
+      <h4 class="title">New In MI</h4>
+      <input type="submit" class="btn btn-primary" title="Show More">
+    </products>
+  </div> -->
+
+  <!-- <h2>This Is The App Component</h2>
+  <app-demo>
+    <p #paragraph>This is a paragraph</p>
+  </app-demo> -->
+
+  <h1 setBackground>Custom Directive</h1>
+  <div setBackground>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, doloremque.</p>
   </div>
 
+  <h1 appHighlight>Renderer2 Directive</h1>
+  <div appHighlight>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, doloremque.</p>
+  </div>
+
+  <h1 appHover appHighlight>HostListener Directive</h1>
+  <div appHover appHighlight>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, doloremque.</p>
+  </div>
+  
+  <h1 appBetterhighlight>HostListener Directive</h1>
+  <div appBetterhighlight>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, doloremque.</p>
+  </div>
+  
 </div>
 
