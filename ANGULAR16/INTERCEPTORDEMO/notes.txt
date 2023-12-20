@@ -1,0 +1,24 @@
+1. Services(Observables)
+2. Routing
+3. Template forms(X reactive form)
+4. Token Injection
+
+//promises VS Obervables
+
+//Material UI -- Link
+
+MEAN
+
+// JS(hands On)+NodeJS+Resume - 1hr
+//
+
+LIBUV
+
+promises:
+
+define-
+
+before-
+after-
+
+Use case-

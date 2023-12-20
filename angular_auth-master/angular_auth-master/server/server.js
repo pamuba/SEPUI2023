@@ -9,8 +9,10 @@ app.use(cors())
 
 app.use(bodyParser.json())
 
+//localhost:3000/api
 app.use('/api', api)
 
+//localhost:300
 app.get('/', function(req, res){
     res.send("hello from server")
 })

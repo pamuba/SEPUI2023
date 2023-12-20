@@ -21,7 +21,7 @@ export class SpecialEventsComponent implements OnInit {
           res => this.specialEvents = res,
           err => {
             if(err instanceof HttpErrorResponse){
-              if(err.status === 401 || err.status === 500){
+              if(err.status === 401 || err.status === 500 ){
                   localStorage.removeItem('token')
                   this._router.navigate(['/login'])
               }

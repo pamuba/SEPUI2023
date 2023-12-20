@@ -31,11 +31,11 @@ function verifyToken(req, res, next){
     next()
   }
 }
-
+//localhost:3000/api
 router.get('/', (req, res)=>{
     res.send('From API route')
 })
-
+////localhost:3000/api/register
 router.post('/register', (req,res) => {
     console.log("Register Called")
     let userData = req.body
