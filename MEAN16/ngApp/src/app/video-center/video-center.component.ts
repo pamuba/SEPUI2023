@@ -61,3 +61,4 @@ export class VideoCenterComponent {
         this.selectedVideo = null
   }
 }
+
