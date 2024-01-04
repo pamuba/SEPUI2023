@@ -1,0 +1,6 @@
+useEffect = > componentDidMount, componentDidUpdate, componentWillUnMount
+
+
+<p1 = "ob1">a<p1> b c d
+
+<p1 = "ob2">e</p1> f g
