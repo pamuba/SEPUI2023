@@ -5,3 +5,4 @@ export const buyLaptop = () => {
         type:BUY_LAPTOP,
     }
 }
+
