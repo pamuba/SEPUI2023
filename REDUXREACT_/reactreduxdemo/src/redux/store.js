@@ -10,9 +10,9 @@ import { configureStore } from '@reduxjs/toolkit';
 
 // configureStore()
 
-const store = configureStore({ reducer: {laptopReducer} })
+const store = configureStore({ reducer: laptopReducer })
 // const store = createStore(laptopReducer)
-console.log(store.getState())
+console.log(store.getState().laptopReducer)
 // const store = configureStore({ reducer: laptopReducer })
 
 export default store;

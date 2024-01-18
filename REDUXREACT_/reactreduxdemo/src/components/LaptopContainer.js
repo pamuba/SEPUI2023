@@ -24,7 +24,7 @@ function LaptopContainer(props){
 }
 //Store.State => props of the Component
 const mapStateToProps = state => {
-  console.log("State..",state)
+  console.log("State..",state.laptopReducer)
   return {
     numOfLaptops: state.numOfLaptops,
   }
